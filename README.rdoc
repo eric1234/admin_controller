@@ -1,0 +1,14 @@
+Works basically like inherited resources except:
+
+1. It is simpler. There are much fewer callbacks. If you need it to be
+   more capable, your are better off just implement the controller
+   without an abstraction library (possibly with the help of scaffolding
+   and responders).
+2. It is designed to use in admin controllers. This means:
+   * There is no "show" action. After a create or update you go back to
+     the list.
+   * There is only a "form" template instead of both new and edit since
+     those are almost the same and the differences can be handled better
+     with conditionals.
+3. It automatically uses many of the 'responders' modules available
+   so flash is automatically set and caching is automatically used.
