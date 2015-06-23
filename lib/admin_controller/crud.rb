@@ -52,7 +52,7 @@ module AdminController::Crud
   # Create a new instance of the object we are editing populated with
   # any params from the form params.
   def new_object
-    @object = klass.new params[object_name.to_sym]
+    @object = scope.new params[object_name.to_sym]
     set_instance
   end
 
